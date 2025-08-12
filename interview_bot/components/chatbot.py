@@ -4,6 +4,7 @@ from . import style
 
 import reflex as rx
 
+# API KEY
 OPENAI_API_KEY = ""
 
 # App state
@@ -69,7 +70,7 @@ class State(rx.State):
 
 
         session = await client.chat.completions.create(
-            model="gpt-4o-mini",
+            model="gpt-5-nano",
             messages=[{"role": "system", "content": system_prompt}],
             temperature=0.7,
         )
@@ -101,7 +102,7 @@ class State(rx.State):
 
         # Start streaming completion from OpenAI
         session = await client.chat.completions.create(
-            model="gpt-4o-mini",
+            model="gpt-5-nano",
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": self.question}
